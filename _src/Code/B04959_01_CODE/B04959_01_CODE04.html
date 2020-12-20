@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Dojo Arrays</title>
+	<meta name="dojo Array" content="Dojo Arrays">
+	<script src="http://js.arcgis.com/3.15/"></script>
+
+	<script>
+		require(["dojo/_base/array"],
+			function (array, dom, domConst, on, domStyle) {
+				var arr = ["Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur", "Sun"];
+				var daysOfWeek = array.map(arr, function (item) {
+					return item + "day";
+				});
+				var weekdays = array.filter(daysOfWeek, function (item) {
+					return item[0] != "S";
+				});
+				array.forEach(daysOfWeek, function (day, idx) {
+					console.log("Day #" + (idx + 1) + " is " + day);
+				})
+
+			});
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

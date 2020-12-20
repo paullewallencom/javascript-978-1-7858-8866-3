@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="http://js.arcgis.com/3.15/esri/css/esri.css">
+	<style>
+		html,
+		body,
+		#mapDiv {
+			height: 800px;
+		}
+	</style>
+
+	<script src="http://js.arcgis.com/3.15/"></script>
+	<script>
+		require(["esri/map",
+         "esri/layers/ArcGISTiledMapServiceLayer",
+         "esri/layers/ArcGISDynamicMapServiceLayer",
+         "dojo/domReady!"],
+			function (
+				Map,
+				ArcGISTiledMapServiceLayer,
+				ArcGISDynamicMapServiceLayer
+
+			) {
+				var map = new Map("mapDiv", {
+					showAttribution: false,
+					logo: false
+				});
+				var tileMap = new ArcGISTiledMapServiceLayer("http://maps.ngdc.noaa.gov/arcgis/rest/services/web_mercator/etopo1_hillshade/MapServer");
+				var worldCities = new ArcGISDynamicMapServiceLayer("http://maps.ngdc.noaa.gov/arcgis/rest/services/SampleWorldCities/MapServer", {
+					"id": "worldCities",
+					"opacity": 0.5,
+
+				});
+				worldCities.setVisibleLayers([0]);
+				worldCities.setLayerDefinitions(["POP > 1000000"]);
+
+
+				map.addLayers([tileMap, worldCities]);
+
+				map.addLayer(tileMap);
+
+			})
+	</script>
+</head>
+
+<body>
+	<div id="mapDiv" />
+</body>
+
+</html>

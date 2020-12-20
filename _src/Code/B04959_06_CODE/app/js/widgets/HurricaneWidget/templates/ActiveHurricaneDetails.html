@@ -1,0 +1,41 @@
+<div>
+    <form role="form">
+        <div class="form-group">
+            <label>Active Hurricanes:</label>
+            <select class="form-control" data-dojo-type="dijit/form/Select" dojoAttachPoint="cbxactiveHurricane" data-dojo-attach-event="onchange:_onHurricane_Selection_Changed">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+    </form>
+    <table class="table table-striped">
+		<tbody>
+			<tr>
+				<td>MSLP</td>
+				<td dojoAttachPoint="_mslp"></td>
+			</tr>
+			<tr>
+				<td>BASIN</td>
+				<td dojoAttachPoint="_basin"></td>
+			</tr>
+			<tr>
+				<td>STORMNUM</td>
+				<td dojoAttachPoint="_stormnum"></td>
+			</tr>
+			<tr>
+				<td>STORMTYPE</td>
+				<td dojoAttachPoint="_stormtype"></td>
+			</tr>
+			<tr>
+				<td>INTENSITY</td>
+				<td dojoAttachPoint="_intensity"></td>
+			</tr>
+			<tr>
+				<td>SS</td>
+				<td dojoAttachPoint="_ss"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,70 @@
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../../fonts/glyphicons-halflings-regular.eot');
+	src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body {
+	padding-top: 50px;
+}
+
+.starter-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+
+#mapDiv {
+	height: 100%;
+}
+
+
+/* Change color of icons to match bar chart and selection symbol */
+
+.esriPopup.dark div.titleButton,
+.esriPopup.dark div.titlePane .title,
+.esriPopup.dark div.actionsPane .action {
+	color: #A4CE67;
+	heigth:20px;
+}
+
+
+/* Additional customizations */
+
+.esriPopup.dark .esriPopupWrapper {
+	border: none;
+}
+
+.esriPopup .contentPane {
+	text-align: center;
+}
+
+.esriViewPopup .gallery {
+	margin: 0 auto;
+}
+
+
+/*panel*/
+.panel-heading span {
+    margin-top: -7px;
+    font-size: 15px;
+    margin-right: -12px;
+}
+
+.clickable {
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.panelCon {
+    position: absolute;
+    width: 800px;
+    left: 20%;
+    height: 200px;
+    bottom: 50px;
+    z-index: 1;
+    display: none;
+}
+

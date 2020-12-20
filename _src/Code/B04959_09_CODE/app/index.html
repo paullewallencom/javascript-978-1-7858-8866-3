@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Drought Application">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>Drought App </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap-map-js & custom styles -->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.15/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
+    <link rel="stylesheet" type="text/css" href="/css/lib/bootstrapmap.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/map-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/d3-style.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bootstrap_v3/docs-assets/js/html5shiv.js"></script>
+      <script src="../bootstrap_v3/docs-assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+    <div class="panel panel-default custom_panel" style="height:160px; bottom: 10px;width: 920px;display:block;">
+        <div class="panel-heading">
+            <span class="panel-titletext">ESRI Time Slider Widget</span>
+            <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
+        </div>
+        <div class="panel-body">
+            <div class="timeDisplay">Drought Map at <span id="daterange"></span> (Completion date)</div>
+            <div id="timeSliderDiv"></div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default custom_panel" style="height:250px; bottom: 10px;width: 920px;">
+        <div class="panel-heading">
+            <span class="panel-titletext">Drought History</span>
+            <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
+        </div>
+        <div class="panel-body">
+            <div id="droughtHistoryMap"></div>
+        </div>
+    </div>
+
+    <div class="panel panel-default custom_panel" style="height:250px; bottom: 10px;width: 920px;">
+        <div class="panel-heading">
+            <span class="panel-titletext">Custom D3 Time Slider</span>
+            <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
+        </div>
+        <div class="panel-body">
+            <div id="d3timeSliderDiv"></div>
+        </div>
+    </div>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img style="margin-top: -6px;" src="favicon.png">Drought App</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--li class="active"><a href="#">Basemaps</a></li-->
+                    <li class="active dropdown" id="basemapList">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Basemaps <b class="caret"></b></a>
+                        <ul class="dropdown-menu" id="myDropdown">
+                            <li><a href="#">Streets</a></li>
+                            <li><a href="#">Imagery</a></li>
+                            <li><a href="#">National Geographic</a></li>
+                            <li><a href="#">Topographic</a></li>
+                            <li><a href="#">Gray</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Open Street Map</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="panelMenuItems">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Drought Map<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">ESRI Time Slider Widget</a></li>
+                            <li><a href="#">Custom D3 Time Slider</a></li>
+                            <li><a href="#">Drought History</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <!-- Bootstrap-map-js -->
+    <div id="mapDiv"></div>
+
+    <!-- script imports -->
+    <script src="js/lib/dojo-config.js"></script>
+    <script src="https://js.arcgis.com/3.15/"></script>
+    <script src="js/map.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+</body>
+
+</html>

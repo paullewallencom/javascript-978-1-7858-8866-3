@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../../fonts/glyphicons-halflings-regular.eot');
+    src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body {
+    padding-top: 50px;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+#mapDiv {
+    height: 100%;
+}
+
+
+/*panel close*/
+.panel-heading span {
+    margin-top: -7px;
+    font-size: 15px;
+    margin-right: -12px;
+}
+
+.clickable {
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.custom_panel {
+    position: absolute;
+    width: 800px;
+    left: 20%;
+    height: 200px;
+    bottom: 50px;
+    z-index: 1;
+    display: none;
+}
+
+
+/*time slider*/
+.timeDisplay{
+    text-align: center;
+    padding-bottom: 20px;
+}

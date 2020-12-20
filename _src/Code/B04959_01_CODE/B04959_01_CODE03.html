@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Hello, Dojo</title>
+	<meta name="My dojo Module" content="My First Dojo module">
+	<script src="http://js.arcgis.com/3.15/"></script>
+</head>
+
+<body>
+	<script>
+		define('DojoGreeting', [],
+			function () {
+				var _dojoGreeting = 'Hello, from Dojo!';
+				return _dojoGreeting;
+			});
+
+		require([
+			'DojoGreeting', //load the module 'myModule' 
+    		'dojo/dom',
+    		'dojo/domReady!'
+		], function (dojoGreeting, dom) {
+			dom.byId('greeting').innerHTML = dojoGreeting;
+		});
+	</script>
+	<h1 id="greeting"></h1>
+</body>
+
+</html>

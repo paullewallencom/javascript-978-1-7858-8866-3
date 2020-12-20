@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Hello, Map</title>
+	<meta charset="utf-8" />
+	<!--Load the esri css and the latest JavaScript CDN-->
+	<link rel="stylesheet" href="http://js.arcgis.com/3.15/esri/css/esri.css">
+	<script src="http://js.arcgis.com/3.15/"></script>
+	<!--Everything goes into the head section-->
+	<script>
+		var map;
+		require([
+			"esri/map",
+			"esri/geometry/Extent"
+		],
+			function (
+				Map,
+				Extent
+			) {
+				map = new Map("myMap", {
+					basemap: "national-geographic"
+				});
+				var extent = new Extent({
+					"type": "extent",
+					"xmin": -8602280.49098274,
+					"ymin": 4694656.071669123,
+					"xmax": -8550074.000664035,
+					"ymax": 4717587.180154645,
+					"spatialReference": {
+						"wkid": 102100,
+						"latestWkid": 3857
+					}
+				});
+				map.setExtent(extent);
+			});
+	</script>
+</head>
+
+<body>
+	<div id="myMap" style="width:100%; height:600px" />
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+html,
+body,
+#mapDiv {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#basemapGalleryDiv {
+	position: absolute;
+	top: 100px;
+	right: 10px;
+	height: 300px;
+	width: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border-radius: 17px;
+	border: 2px solid #4A668B;
+	background: #2B4970;
+	box-shadow: #B3B3B3 2px 2px 2px;
+	padding: 14px 0px 14px 7px;
+}
+
+#legendContainer {
+	position: absolute;
+	top: 100px;
+	left: 10px;
+	height: 300px;
+	width: 300px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border-radius: 17px;
+	background: #fff;
+	box-shadow: #B3B3B3 2px 2px 2px;
+	padding: 14px 0px 14px 7px;
+}
+
+#basemapGalleryDiv .esriBasemapGallerySelectedNode .esriBasemapGalleryThumbnail {
+	border: 4px solid #F99;
+	margin: 0;
+}

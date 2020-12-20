@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="http://js.arcgis.com/3.15/esri/css/esri.css">
+	<style>
+		html,
+		body,
+		#mapDiv {
+			height: 800px;
+		}
+	</style>
+
+	<script src="http://js.arcgis.com/3.15/"></script>
+	<script>
+		require([
+			"esri/map",
+         "esri/layers/ArcGISTiledMapServiceLayer",
+         "esri/layers/ArcGISDynamicMapServiceLayer",
+		 "esri/layers/FeatureLayer",
+		 "dojo/on",
+         "dojo/domReady!"],
+			function (
+				Map,
+				ArcGISTiledMapServiceLayer,
+				ArcGISDynamicMapServiceLayer,
+				FeatureLayer,
+				on
+			) {
+				var map = new Map("mapDiv", {
+					showAttribution: false,
+					logo: false
+				});
+				var tileMap = new ArcGISTiledMapServiceLayer("http://maps.ngdc.noaa.gov/arcgis/rest/services/web_mercator/etopo1_hillshade/MapServer");
+				var worldCities = new ArcGISDynamicMapServiceLayer("http://maps.ngdc.noaa.gov/arcgis/rest/services/SampleWorldCities/MapServer", {
+					"id": "worldCities",
+					"opacity": 0.5,
+
+				});
+				worldCities.setVisibleLayers([0]);
+				worldCities.setLayerDefinitions(["POP > 1000000"]);
+				var earthQuakeLayerURL = 'http://maps.ngdc.noaa.gov/arcgis/rest/services/web_mercator/hazards/MapServer/5';
+				earthQuakeLayer = new FeatureLayer(earthQuakeLayerURL, {
+					id: "Earthquake Layer",
+					outFields: ["EQ_MAGNITUDE", "INTENSITY", "COUNTRY", "LOCATION_NAME", "DAMAGE_DESCRIPTION", "DATE_STRING"],
+					opacity: 0.5,
+					mode: FeatureLayer.MODE_ONDEMAND,
+					definitionExpression: "EQ_MAGNITUDE > 6",
+				});
+				map.addLayers([tileMap, worldCities, earthQuakeLayer]);
+				on(map, "layers-add-result", function (evt) {
+					console.log("1.", earthQuakeLayer.id);
+					console.log("2.", earthQuakeLayer.fields);
+					console.log("3.", earthQuakeLayer.geometryType);
+					console.log("4.", earthQuakeLayer.maxRecordCount);
+					console.log("5.", worldCities.layerInfos);
+				});
+
+			})
+	</script>
+</head>
+
+<body>
+	<div id="mapDiv" />
+</body>
+
+</html>
